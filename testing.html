@@ -9,7 +9,10 @@
   Sorry, your browser does not support canvas.
   </canvas>
 <script>
-const canvas
+const canvas = document.getElementByID("Mycanvas");
+const ctx = canvas.getContext("2d");
+ctx.fillStyle = "pink";
+ctx.fillRect(0, 0, 150, 75);
 </script>
 </body>
 </html>
