@@ -9,12 +9,12 @@ var height = canvas.height;
 function drawBorderLines() {
     ctx.beginPath(); // Define a new path
 
-    for (var i = 1; i < 10; i++) {
+    for (var i = 1; i < 10; i++) { //vertical lines
         ctx.moveTo(((width/10)*i), 0); //start at point
         ctx.lineTo(((width/10)*i), height); //end at point
         ctx.stroke(); //draw
     }
-    for (var i = 1; i < 20; i++) {
+    for (var i = 1; i < 20; i++) { //horizontal lines
         ctx.moveTo(0, ((height/20)*i)); //start at point
         ctx.lineTo(width, ((height/20)*i)); //end at point
         ctx.stroke(); //draw
