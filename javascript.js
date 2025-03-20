@@ -2,8 +2,15 @@
 // defines canvs variables
 const canvas = document.getElementById('playboard');
 const ctx = canvas.getContext("2d");
-var width = canvas.width;
-var height = canvas.height;
+const width = canvas.width;
+const height = canvas.height;
+
+var pieceList = [];
+var addToList = 0;
+
+function getRandomInt(min, max) { //funktion to get random variable
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
 
 // funktion to drawlines on borders
 function drawBorderLines() {
@@ -22,4 +29,17 @@ function drawBorderLines() {
     ctx.stroke(); //draw
 }
 
-drawBorderLines()
+//random array til brug af valg af figurer
+function randomArray() {
+    for (i = (pieceList.length); i < 7; i++) {
+        do {
+            addToList = getRandomInt(1, 7)
+        }
+        while (pieceList.includes(addToList))
+        pieceList.push(addToList);
+    }
+}
+
+//funktions to start
+drawBorderLines() //draw grid
+randomArray() //make first figurer array
