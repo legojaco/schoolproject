@@ -7,11 +7,247 @@
 <body>
   <canvas id="myCanvas" width="200" height="200" style="border:2px solid blue;">  <!-- draw canvas, one pixel border-->
   </canvas>
+
+  <button onclick="rotateTblockLEFT()">LEFT</button>
+  <button onclick="rotateTblockRIGHT()">RIGHT</button>
+  <button onclick="createTblockDOWN()">DOWN</button>
+
+  <kbd id="pressDOWN">6</kbd>
   <script>
-  const canvas = document.getElementByID("Mycanvas");
+  const canvas = document.getElementById("myCanvas");
   const ctx = canvas.getContext("2d");
-  ctx.fillStyle = "pink";
-  ctx.fillRect(10, 10, 100, 100);
-  </script>
+//laver variabler over størrelse og position af rectangler
+  var a = 50;
+  var b = 50;
+  var size = 30;
+  var a1 = 0;
+  var b1 = 0;
+  var a2 = 0;
+  var b2 = 0;
+  var a3 = 0;
+  var b3 = 0;
+  var a4 = 0;
+  var b4 = 0;
+  var i = 1;
+//lav funktion createTblock
+function createTblockDOWN(){
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size);
+  //bestem farven
+  ctx.fillStyle = "purple";
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a1 = a;
+  b1 = b;
+  //skub start position
+  a = a - size;
+  b = b;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a2 = a;
+  b2 = b;
+  //skub start position
+  a = a + size;
+  b = b + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect 
+  a3 = a;
+  b3 = b;
+  //skub start position
+  a = a + size;
+  b = b - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a4 = a;
+  b4 = b;
+  a = a - size;
+  b = b;
+}
+
+function createTblockUP(){
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size); 
+  //bestem farven
+  ctx.fillStyle = "purple";
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a1 = a;
+  b1 = b;
+  //skub start position
+  a = a - size;
+  b = b;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a2 = a;
+  b2 = b;
+  //skub start position
+  a = a + size;
+  b = b - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a3 = a;
+  b3 = b;
+  //skub start position
+  a = a + size;
+  b = b + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a4 = a;
+  b4 = b;
+  a = a - size;
+  b = b;
+}
+
+function createTblockLEFT(){
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size); 
+  //bestem farven
+  ctx.fillStyle = "purple";
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a1 = a;
+  b1 = b;
+  //skub start position
+  a = a - size;
+  b = b;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a2 = a;
+  b2 = b;
+  //skub start position
+  a = a + size;
+  b = b + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a3 = a;
+  b3 = b;
+  //skub start position
+  a = a;
+  b = b - size - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  //sæt position for clearRect
+  a4 = a;
+  b4 = b;
+  //skub startposition
+  a = a;
+  b = b + size;
+}
+
+function createTblockRIGHT(){
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size);
+  //bestem farven
+  ctx.fillStyle = "purple";
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  a1 = a;
+  b1 = b;
+  //skub start position
+  a = a + size;
+  b = b;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  a2 = a;
+  b2 = b;
+  //skub start position
+  a = a - size;
+  b = b + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  a3 = a;
+  b3 = b;
+  //skub start position
+  a = a;
+  b = b - size - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(a, b, size, size);
+  a4 = a;
+  b4 = b;
+  a = a;
+  b = b + size;
+}
+
+function rotateTblockRIGHT(){
+  if(i = 1){
+    createTblockUP;
+  }
+  if(i = 2){
+    createTblockRIGHT;
+  }
+  if(i = 3){
+    createTblockDOWN;
+  }
+  if(i = 4){
+    createTblockLEFT;
+
+  }
+  if(i<4){
+    i = i + 1;
+  }
+  else{
+    i = 1;
+  }
+
+}
+function rotateTblockLEFT(){
+
+  if(i = 1){
+    createTblockUP;
+  }
+  if(i = 2){
+    createTblockRIGHT;
+  }
+  if(i = 3){
+    createTblockDOWN;
+  }
+  if(i = 4){
+    createTblockLEFT;
+  }
+  if(i>1){
+    i = i - 1;
+  }
+  else{
+    i = 4;
+  }
+}
+
+
+</script>
 </body>
 </html>
