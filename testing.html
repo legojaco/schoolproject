@@ -8,9 +8,12 @@
   <canvas id="myCanvas" width="200" height="200" style="border:2px solid blue;">  <!-- draw canvas, one pixel border-->
   </canvas>
 
-  <button onclick="rotateTblockLEFT()">LEFT</button>
-  <button onclick="rotateTblockRIGHT()">RIGHT</button>
+  <button onclick="rotateTblockLEFT()">RotateLEFT</button>
+  <button onclick="rotateTblockRIGHT()">RotateRIGHT</button>
   <button onclick="createTblockDOWN()">DOWN</button>
+  <button onclick="createTblockLEFT()">LEFT</button>
+  <button onclick="createTblockUP()">UP</button>
+  <button onclick="createTblockRIGHT()">RIGHT</button>
 
   <kbd id="pressDOWN">6</kbd>
   <script>
@@ -28,7 +31,7 @@
   var b3 = 0;
   var a4 = 0;
   var b4 = 0;
-  var i = 1;
+ 
 //lav funktion createTblock
 function createTblockDOWN(){
   //fjern tidligere figurer
@@ -202,49 +205,53 @@ function createTblockRIGHT(){
   a = a;
   b = b + size;
 }
-
+var i = 1;
 function rotateTblockRIGHT(){
-  if(i = 1){
-    createTblockUP;
+  if(i == 1){
+    createTblockUP();
+    i = 2;
   }
-  if(i = 2){
-    createTblockRIGHT;
-  }
-  if(i = 3){
-    createTblockDOWN;
-  }
-  if(i = 4){
-    createTblockLEFT;
 
+  if(i == 2){
+    createTblockRIGHT();
+    i = 3;
   }
-  if(i<4){
-    i = i + 1;
+
+  if(i == 3){
+    createTblockDOWN();
+    i = 4;
   }
-  else{
+
+  if(i == 4){
+    createTblockLEFT();
     i = 1;
   }
 
+
 }
 function rotateTblockLEFT(){
+  
+  if(i == 1){
+    createTblockUP();
 
-  if(i = 1){
-    createTblockUP;
-  }
-  if(i = 2){
-    createTblockRIGHT;
-  }
-  if(i = 3){
-    createTblockDOWN;
-  }
-  if(i = 4){
-    createTblockLEFT;
-  }
-  if(i>1){
-    i = i - 1;
-  }
-  else{
     i = 4;
   }
+  if(i == 2){
+    createTblockRIGHT();
+
+    i = 1;
+  }
+  if(i == 3){
+    createTblockDOWN();
+
+    i = 2;
+  }
+  if(i == 4){
+    createTblockLEFT();
+
+    i = 3;
+  }
+
 }
 
 
