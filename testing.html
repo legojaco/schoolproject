@@ -14,7 +14,9 @@
   <button onclick="createTblockLEFT()">LEFT</button>
   <button onclick="createTblockUP()">UP</button>
   <button onclick="createTblockRIGHT()">RIGHT</button>
-
+  <button onclick="moveRIGHT()">MoveRIGHT</button>
+  <button onclick="moveLEFT()">MoveLEFT</button>
+  <button onclick="moveDOWN()">MoveDOWN</button>
   <kbd id="pressDOWN">6</kbd>
   <script>
   const canvas = document.getElementById("myCanvas");
@@ -204,6 +206,15 @@ function createTblockRIGHT(){
   b4 = b;
   a = a;
   b = b + size;
+}
+function moveDOWN(){
+  b = b + size;
+}
+function moveLEFT(){
+  a = a - size;
+}
+function moveRIGHT(){
+  a = a + size;
 }
 var i = 1;
 function rotateTblockRIGHT(){
