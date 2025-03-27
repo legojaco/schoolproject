@@ -42,96 +42,123 @@ function randomArray() {
 }
 
 class Piece {
-
     constructor(type, name){ //laver koordinaterne til ny figur
         switch(type){
             case 1: //I piece
-                this.piece = I;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(0, 200, 255); //colour of piece might get deleted/ changed
                 break;
             case 2: //O piece
-                this.piece = O;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(225, 255, 0);
                 break;
             case 3: //T piece
-                this.piece = T;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(255, 0, 225);
                 break;
             case 4: //S piece
-                this.piece = S;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(0, 255, 40);
                 break;
             case 5: //Z piece
-                this.piece = Z;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(255, 0, 0);
                 break;
             case 6: //J piece
-                this.piece = J;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(0, 0, 255);
                 break;
             case 7: //L piece
-                this.piece = L;
-                this.a1 = 0;
-                this.b1 = 0;
-                this.a2 = 0;
-                this.b2 = 0;
-                this.a3 = 0;
-                this.b3 = 0;
-                this.a4 = 0;
-                this.b4 = 0;
-                this.name = name;
+                this.xKoorBlock1 = 0; //koord of piece block 1
+                this.yKoorBlock1 = 0;
+        
+                this.xKoorBlock2 = 0; //koord of piece block 2
+                this.yKoorBlock2 = 0;
+        
+                this.xKoorBlock3 = 0; //koord of piece block 3
+                this.yKoorBlock3 = 0;
+        
+                this.xKoorBlock4 = 0; //koord of piece block 4
+                this.yKoorBlock4 = 0;
+                this.colour = rgb(255, 120, 0);
                 break;
-            default:
+            default: //in case of error make 
 
         }
+        this.piece = type;
+        this.name = name;
+        
+        this.xKoorBlock1 = 0; //koord of piece block 1
+        this.yKoorBlock1 = 0;
+
+        this.xKoorBlock2 = 0; //koord of piece block 2
+        this.yKoorBlock2 = 0;
+
+        this.xKoorBlock3 = 0; //koord of piece block 3
+        this.yKoorBlock3 = 0;
+
+        this.xKoorBlock4 = 0; //koord of piece block 4
+        this.yKoorBlock4 = 0;
     }
 }
 //funktions to start
