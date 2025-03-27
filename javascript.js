@@ -2,8 +2,9 @@
 // defines canvs variables
 const canvas = document.getElementById('playboard');
 const ctx = canvas.getContext("2d");
-const width = canvas.width;
-const height = canvas.height;
+const width = canvas.width; //størrelsen af canvas
+const height = canvas.height; //størrelsen af canvas
+const size = 20; //størrelsen af figur
 
 var pieceList = [];
 var addToList = 0;
@@ -40,6 +41,100 @@ function randomArray() {
     }
 }
 
+class Piece {
+
+    constructor(type, name){ //laver koordinaterne til ny figur
+        switch(type){
+            case 1: //I piece
+                this.piece = I;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            case 2: //O piece
+                this.piece = O;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            case 3: //T piece
+                this.piece = T;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            case 4: //S piece
+                this.piece = S;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            case 5: //Z piece
+                this.piece = Z;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            case 6: //J piece
+                this.piece = J;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            case 7: //L piece
+                this.piece = L;
+                this.a1 = 0;
+                this.b1 = 0;
+                this.a2 = 0;
+                this.b2 = 0;
+                this.a3 = 0;
+                this.b3 = 0;
+                this.a4 = 0;
+                this.b4 = 0;
+                this.name = name;
+                break;
+            default:
+
+        }
+    }
+}
 //funktions to start
 drawBorderLines() //draw grid
 randomArray() //make first figurer array
+
