@@ -1,1 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Input med hændelser - Tastatur og mus</title>
+</head>
+<body>
+  <canvas id="myCanvas" width="200" height="200" style="border:2px solid blue;">  <!-- draw canvas, one pixel border-->
+  </canvas>
 
+  <button onclick="rotateTblockLEFT()">RotateLEFT</button>
+  <button onclick="rotateTblockRIGHT()">RotateRIGHT</button>
+  <button onclick="createTblockDOWN()">DOWN</button>
+  <button onclick="createTblockLEFT()">LEFT</button>
+  <button onclick="createTblockUP()">UP</button>
+  <button onclick="createTblockRIGHT()">RIGHT</button>
+  <button onclick="moveRIGHT()">MoveRIGHT</button>
+  <button onclick="moveLEFT()">MoveLEFT</button>
+  <button onclick="moveDOWN()">MoveDOWN</button>
+  <button onclick="placeTblock()">PlaceT</button>
+
+  <kbd id="pressDOWN">6</kbd>
+  <script>
+  const canvas = document.getElementById("myCanvas");
+  const ctx = canvas.getContext("2d");
+//laver variabler over størrelse og position af rectangler
+  var xcoordinate = 50;
+  var ycoordinate = 50;
+  const size = 20;
+
+//Disse variabler gemmer positionen af hvor der bliver lavet en blok.
+  var a1 = 0;
+  var b1 = 0;
+  var a2 = 0;
+  var b2 = 0;
+  var a3 = 0;
+  var b3 = 0;
+  var a4 = 0;
+  var b4 = 0;
+
+//lav funktion createTblock
+function createTblockDOWN() {
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size);
+
+  //bestem farven
+  ctx.fillStyle = "purple";
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect
+  a1 = xcoordinate;
+  b1 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate - size;
+  ycoordinate = ycoordinate;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect
+  a2 = xcoordinate;
+  b2 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate + size;
+  ycoordinate = ycoordinate + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect 
+  a3 = xcoordinate;
+  b3 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate + size;
+  ycoordinate = ycoordinate - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect
+  a4 = xcoordinate;
+  b4 = ycoordinate;
+  xcoordinate = xcoordinate - size;
+  ycoordinate = ycoordinate;
+}
+
+function createTblockUP() {
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size); 
+
+  //bestem farven
+  ctx.fillStyle = "purple";
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect
+  a1 = xcoordinate;
+  b1 = ycoordinate;
+ 
+  //skub start position
+  xcoordinate = xcoordinate - size;
+  ycoordinate = ycoordinate;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+ 
+  //sæt position for clearRect
+  a2 = xcoordinate;
+  b2 = ycoordinate;
+  
+  //skub start position
+  xcoordinate = xcoordinate + size;
+  ycoordinate = ycoordinate - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  
+  //sæt position for clearRect
+  a3 = xcoordinate;
+  b3 = ycoordinate;
+  //skub start position
+  xcoordinate = xcoordinate + size;
+  ycoordinate = ycoordinate + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  //sæt position for clearRect
+  a4 = xcoordinate;
+  b4 = ycoordinate;
+  xcoordinate = xcoordinate - size;
+  ycoordinate = ycoordinate;
+}
+
+function createTblockLEFT() {
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size); 
+  
+  //bestem farven
+  ctx.fillStyle = "purple";
+ 
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  
+  //sæt position for clearRect
+  a1 = xcoordinate;
+  b1 = ycoordinate;
+  
+  //skub start position
+  xcoordinate = xcoordinate - size;
+  ycoordinate = ycoordinate;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  
+  //sæt position for clearRect
+  a2 = xcoordinate;
+  b2 = ycoordinate;
+  
+  //skub start position
+  xcoordinate = xcoordinate + size;
+  ycoordinate = ycoordinate + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect
+  a3 = xcoordinate;
+  b3 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate;
+  ycoordinate = ycoordinate - size - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+
+  //sæt position for clearRect
+  a4 = xcoordinate;
+  b4 = ycoordinate;
+
+  //skub startposition
+  xcoordinate = xcoordinate;
+  ycoordinate = ycoordinate + size;
+}
+
+function createTblockRIGHT() {
+  //fjern tidligere figurer
+  ctx.clearRect(a1,b1,size,size);
+  ctx.clearRect(a2,b2,size,size);
+  ctx.clearRect(a3,b3,size,size);
+  ctx.clearRect(a4,b4,size,size);
+  
+  //bestem farven
+  ctx.fillStyle = "purple";
+  
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  a1 = xcoordinate;
+  b1 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate + size;
+  ycoordinate = ycoordinate;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  a2 = xcoordinate;
+  b2 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate - size;
+  ycoordinate = ycoordinate + size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  a3 = xcoordinate;
+  b3 = ycoordinate;
+
+  //skub start position
+  xcoordinate = xcoordinate;
+  ycoordinate = ycoordinate - size - size;
+
+  //lav rectangel ud fra tidligere variabler
+  ctx.fillRect(xcoordinate, ycoordinate, size, size);
+  a4 = xcoordinate;
+  b4 = ycoordinate;
+  xcoordinate = xcoordinate;
+  ycoordinate = ycoordinate + size;
+}
+
+function moveDOWN() {
+  ycoordinate = ycoordinate + size;
+}
+function moveLEFT() {
+  xcoordinate = xcoordinate - size;
+}
+function moveRIGHT() {
+  xcoordinate = xcoordinate + size;
+}
+var i = 1;
+
+function rotateTblockRIGHT() {
+  if(i == 1){
+    i = 2;
+  }
+
+  if(i == 2){
+    i = 3;
+  }
+
+  if(i == 3){
+    i = 4;
+  }
+
+  if(i == 4){
+    i = 1;
+  }
+
+
+}
+function rotateTblockLEFT() {
+  
+  if(i == 1){
+    i = 4;
+  }
+  if(i == 2){
+    i = 1;
+  }
+  if(i == 3){
+    i = 2;
+  }
+  if(i == 4){
+    i = 3;
+  }
+}
+function placeTblock() {
+  if(i == 1){
+    createTblockUP();
+  }
+
+  if(i == 2){
+    createTblockRIGHT();
+  }
+
+  if(i == 3){
+    createTblockDOWN();
+  }
+
+  if(i == 4){
+    createTblockLEFT();
+  }
+}
+
+</script>
+</body>
+</html>
