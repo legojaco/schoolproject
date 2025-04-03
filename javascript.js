@@ -65,15 +65,15 @@ class MainPiece { //main class for pieces, bruger inheritance
         this.B4 = 0; //coordinats of block 4
     }
     moveDown(){ //add check to collision
-        this.yKoord += 2;
+        this.yKoord += 1;
     }
 
     moveLEFT(){ //add check to collision
-        this.xKoord -= 2;
+        this.xKoord -= 1;
     }
 
     moveRIGHT(){ //add check to collision
-        this.xKoord += 2;
+        this.xKoord += 1;
     }
 
     rotateBlockLEFT(){ //add check to collision
@@ -112,6 +112,8 @@ class IPiece extends MainPiece{
         super();
         this.colour = "#00ffff";  //cyan   hex
     }
+    
+
 }
 
 class OPiece extends MainPiece{
@@ -125,203 +127,6 @@ class TPiece extends MainPiece{
     constructor(){
         super();
         this.colour = "#ff00ff";  //magenta hex
-    }
-    createTblockDOWN() {
-        //fjern tidligere figurer
-        ctx.clearRect(this.A1, this.B1, size, size);
-        ctx.clearRect(this.A2, this.B2, size, size);
-        ctx.clearRect(this.A3, this.B3, size, size);
-        ctx.clearRect(this.A4, this.B4, size, size);
-    
-        //bestem farven
-        ctx.fillStyle = this.colour;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A1 = this.xKoord;
-        this.B1 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord - size;
-        this.yKoord = this.yKoord;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A2 = this.xKoord;
-        this.B2 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord + size;
-        this.yKoord = this.yKoord + size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect 
-        this.A3 = this.xKoord;
-        this.B3 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord + size;
-        this.yKoord = this.yKoord - size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A4 = this.xKoord;
-        this.B4 = this.yKoord;
-        this.xKoord = this.xKoord - size;
-        this.yKoord = this.yKoord;
-    }
-        
-    createTblockUP() {
-        //fjern tidligere figurer
-        ctx.clearRect(this.A1, this.B1, size, size);
-        ctx.clearRect(this.A2, this.B2, size, size);
-        ctx.clearRect(this.A3, this.B3, size, size);
-        ctx.clearRect(this.A4, this.B4, size, size); 
-    
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A1 = this.xKoord;
-        this.B1 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord - size;
-        this.yKoord = this.yKoord;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A2 = this.xKoord;
-        this.B2 = this.yKoord;
-        
-        //skub start position
-        this.xKoord = this.xKoord + size;
-        this.yKoord = this.yKoord - size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        
-        //sæt position for clearRect
-        this.A3 = this.xKoord;
-        this.B3 = this.yKoord;
-        //skub start position
-        this.xKoord = this.xKoord + size;
-        this.yKoord = this.yKoord + size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        //sæt position for clearRect
-        this.A4 = this.xKoord;
-        this.B4 = this.yKoord;
-        this.xKoord = this.xKoord - size;
-        this.yKoord = this.yKoord;
-    }
-    
-    createTblockLEFT() {
-        //fjern tidligere figurer
-        ctx.clearRect(this.A1, this.B1, size, size);
-        ctx.clearRect(this.A2, this.B2, size, size);
-        ctx.clearRect(this.A3, this.B3, size, size);
-        ctx.clearRect(this.A4, this.B4, size, size); 
-        
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        
-        //sæt position for clearRect
-        this.A1 = this.xKoord;
-        this.B1 = this.yKoord;
-        
-        //skub start position
-        this.xKoord = this.xKoord - size;
-        this.yKoord = this.yKoord;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        
-        //sæt position for clearRect
-        this.A2 = this.xKoord;
-        this.B2 = this.yKoord;
-        
-        //skub start position
-        this.xKoord = this.xKoord + size;
-        this.yKoord = this.yKoord + size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A3 = this.xKoord;
-        this.B3 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord;
-        this.yKoord = this.yKoord - size - size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-    
-        //sæt position for clearRect
-        this.A4 = this.xKoord;
-        this.B4 = this.yKoord;
-    
-        //skub startposition
-        this.xKoord = this.xKoord;
-        this.yKoord = this.yKoord + size;
-    }
-    
-    createTblockRIGHT() {
-        //fjern tidligere figurer
-        ctx.clearRect(this.A1, this.B1, size, size);
-        ctx.clearRect(this.A2, this.B2, size, size);
-        ctx.clearRect(this.A3, this.B3, size, size);
-        ctx.clearRect(this.A4, this.B4, size, size); 
-
-        
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        this.A1 = this.xKoord;
-        this.B1 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord + size;
-        this.yKoord = this.yKoord;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        this.A2 = this.xKoord;
-        this.B2 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord - size;
-        this.yKoord = this.yKoord + size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        this.A3 = this.xKoord;
-        this.B3 = this.yKoord;
-    
-        //skub start position
-        this.xKoord = this.xKoord;
-        this.yKoord = this.yKoord - size - size;
-    
-        //lav rectangel ud fra tidligere variabler
-        ctx.fillRect(this.xKoord, this.yKoord, size, size);
-        this.A4 = this.xKoord;
-        this.B4 = this.yKoord;
-        this.xKoord = this.xKoord;
-        this.yKoord = this.yKoord + size;
     }
 }
 
