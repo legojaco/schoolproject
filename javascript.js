@@ -41,126 +41,121 @@ function randomArray() {
     }
 }
 
-class Piece {
-    constructor(type, name){ //laver koordinaterne til ny figur
-        switch(type){
-            case 1: //I piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(0, 200, 255); //colour of piece might get deleted/ changed
-                break;
-            case 2: //O piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(225, 255, 0);
-                break;
-            case 3: //T piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(255, 0, 225);
-                break;
-            case 4: //S piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(0, 255, 40);
-                break;
-            case 5: //Z piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(255, 0, 0);
-                break;
-            case 6: //J piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(0, 0, 255);
-                break;
-            case 7: //L piece
-                this.xKoorBlock1 = 0; //koord of piece block 1
-                this.yKoorBlock1 = 0;
-        
-                this.xKoorBlock2 = 0; //koord of piece block 2
-                this.yKoorBlock2 = 0;
-        
-                this.xKoorBlock3 = 0; //koord of piece block 3
-                this.yKoorBlock3 = 0;
-        
-                this.xKoorBlock4 = 0; //koord of piece block 4
-                this.yKoorBlock4 = 0;
-                this.colour = rgb(255, 120, 0);
-                break;
-            default: //in case of error make 
+class MainPiece { //main class for pieces, bruger inheritance
+    constructor(){ //laver koordinaterne til ny figur
+        this.orientation = 0; //rotation 0 is default
+        this.xKoord = 0;      //place of rotation axes
+        this.yKoord = 0;      //might change
 
+        this.colour = "#000000"; //colur of piece in hex
+    }
+    moveDown(){ //add check to collision
+        this.yKoord += 2;
+    }
+
+    moveLEFT(){ //add check to collision
+        this.xKoord -= 2;
+    }
+
+    moveRIGHT(){ //add check to collision
+        this.xKoord += 2;
+    }
+
+    rotateBlockLEFT(){ //add check to collision
+        if(this.orientation == 1){
+            this.orientation = 4;
         }
-        this.piece = type;
-        this.name = name;
-        
-        this.xKoorBlock1 = 0; //koord of piece block 1
-        this.yKoorBlock1 = 0;
+        if(this.orientation == 2){
+            this.orientation = 1;
+        }
+        if(this.orientation == 3){
+            this.orientation = 2;
+        }
+        if(this.orientation == 4){
+            this.orientation = 3;
+        }
+    }
 
-        this.xKoorBlock2 = 0; //koord of piece block 2
-        this.yKoorBlock2 = 0;
-
-        this.xKoorBlock3 = 0; //koord of piece block 3
-        this.yKoorBlock3 = 0;
-
-        this.xKoorBlock4 = 0; //koord of piece block 4
-        this.yKoorBlock4 = 0;
+    rotateBlockRIGHT(){ //add check to collision
+        if(this.orientation == 1){
+            this.orientation = 2;
+        }
+        if(this.orientation == 2){
+            ithis.orientation = 3;
+        }
+        if(this.orientation == 3){
+            this.orientation = 4;
+        }
+        if(this.orientation == 4){
+            this.orientation = 1;
+        }
     }
 }
+
+class IPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 4;          //place of rotation axes
+        this.yKoord = 4;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#00ffff";  //cyan   hex
+    }
+}
+
+class OPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 2;          //place of rotation axes
+        this.yKoord = 2;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#ffff00";  //yellow  hex
+    }
+}
+
+class TPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 3;          //place of rotation axes
+        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#ff00ff";  //magenta hex
+    }
+}
+
+class SPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 3;          //place of rotation axes
+        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#00ff00";  //green hex
+    }
+}
+
+class ZPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 3;          //place of rotation axes
+        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#ff0000";  //red hex
+    }
+}
+
+class JPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 3;          //place of rotation axes
+        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#0000ff";  //blue hex
+    }
+}
+
+class LPiece extends MainPiece{
+    constructor(){
+        super();
+        this.xKoord = 3;          //place of rotation axes
+        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
+        this.colour = "#ff8000";  //orange hex
+    }
+}
+
+
 //funktions to start
 drawBorderLines() //draw grid
 randomArray() //make first figurer array
