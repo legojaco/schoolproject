@@ -43,11 +43,26 @@ function randomArray() {
 
 class MainPiece { //main class for pieces, bruger inheritance
     constructor(){ //laver koordinaterne til ny figur
+
         this.orientation = 0; //rotation 0 is default
-        this.xKoord = 0;      //place of rotation axes
-        this.yKoord = 0;      //might change
+        this.xKoord = 5;      //place of rotation axes
+        this.yKoord = 0;      
+
 
         this.colour = "#000000"; //colur of piece in hex
+
+
+        this.A1 = 0; //coordinats of block 1
+        this.B1 = 0; //coordinats of block 1
+
+        this.A2 = 0; //coordinats of block 2
+        this.B2 = 0; //coordinats of block 2
+
+        this.A3 = 0; //coordinats of block 3
+        this.B3 = 0; //coordinats of block 3
+
+        this.A4 = 0; //coordinats of block 4
+        this.B4 = 0; //coordinats of block 4
     }
     moveDown(){ //add check to collision
         this.yKoord += 2;
@@ -62,32 +77,32 @@ class MainPiece { //main class for pieces, bruger inheritance
     }
 
     rotateBlockLEFT(){ //add check to collision
+        if(this.orientation == 0){
+            this.orientation = 3;
+        }
         if(this.orientation == 1){
-            this.orientation = 4;
+            this.orientation = 0;
         }
         if(this.orientation == 2){
             this.orientation = 1;
         }
         if(this.orientation == 3){
             this.orientation = 2;
-        }
-        if(this.orientation == 4){
-            this.orientation = 3;
         }
     }
 
     rotateBlockRIGHT(){ //add check to collision
+        if(this.orientation == 0){
+            this.orientation = 1;
+        }
         if(this.orientation == 1){
-            this.orientation = 2;
+            ithis.orientation = 2;
         }
         if(this.orientation == 2){
-            ithis.orientation = 3;
+            this.orientation = 3;
         }
         if(this.orientation == 3){
-            this.orientation = 4;
-        }
-        if(this.orientation == 4){
-            this.orientation = 1;
+            this.orientation = 0;
         }
     }
 }
@@ -95,8 +110,6 @@ class MainPiece { //main class for pieces, bruger inheritance
 class IPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 4;          //place of rotation axes
-        this.yKoord = 4;          //one cube is 2 wide, to avoid decimals
         this.colour = "#00ffff";  //cyan   hex
     }
 }
@@ -104,8 +117,6 @@ class IPiece extends MainPiece{
 class OPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 2;          //place of rotation axes
-        this.yKoord = 2;          //one cube is 2 wide, to avoid decimals
         this.colour = "#ffff00";  //yellow  hex
     }
 }
@@ -113,26 +124,219 @@ class OPiece extends MainPiece{
 class TPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 3;          //place of rotation axes
-        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
         this.colour = "#ff00ff";  //magenta hex
+    }
+    createTblockDOWN() {
+        //fjern tidligere figurer
+        ctx.clearRect(this.A1, this.B1, size, size);
+        ctx.clearRect(this.A2, this.B2, size, size);
+        ctx.clearRect(this.A3, this.B3, size, size);
+        ctx.clearRect(this.A4, this.B4, size, size);
+    
+        //bestem farven
+        ctx.fillStyle = this.colour;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A1 = this.xKoord;
+        this.B1 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord - size;
+        this.yKoord = this.yKoord;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A2 = this.xKoord;
+        this.B2 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord + size;
+        this.yKoord = this.yKoord + size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect 
+        this.A3 = this.xKoord;
+        this.B3 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord + size;
+        this.yKoord = this.yKoord - size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A4 = this.xKoord;
+        this.B4 = this.yKoord;
+        this.xKoord = this.xKoord - size;
+        this.yKoord = this.yKoord;
+    }
+        
+    createTblockUP() {
+        //fjern tidligere figurer
+        ctx.clearRect(this.A1, this.B1, size, size);
+        ctx.clearRect(this.A2, this.B2, size, size);
+        ctx.clearRect(this.A3, this.B3, size, size);
+        ctx.clearRect(this.A4, this.B4, size, size); 
+    
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A1 = this.xKoord;
+        this.B1 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord - size;
+        this.yKoord = this.yKoord;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A2 = this.xKoord;
+        this.B2 = this.yKoord;
+        
+        //skub start position
+        this.xKoord = this.xKoord + size;
+        this.yKoord = this.yKoord - size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        
+        //sæt position for clearRect
+        this.A3 = this.xKoord;
+        this.B3 = this.yKoord;
+        //skub start position
+        this.xKoord = this.xKoord + size;
+        this.yKoord = this.yKoord + size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        //sæt position for clearRect
+        this.A4 = this.xKoord;
+        this.B4 = this.yKoord;
+        this.xKoord = this.xKoord - size;
+        this.yKoord = this.yKoord;
+    }
+    
+    createTblockLEFT() {
+        //fjern tidligere figurer
+        ctx.clearRect(this.A1, this.B1, size, size);
+        ctx.clearRect(this.A2, this.B2, size, size);
+        ctx.clearRect(this.A3, this.B3, size, size);
+        ctx.clearRect(this.A4, this.B4, size, size); 
+        
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        
+        //sæt position for clearRect
+        this.A1 = this.xKoord;
+        this.B1 = this.yKoord;
+        
+        //skub start position
+        this.xKoord = this.xKoord - size;
+        this.yKoord = this.yKoord;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        
+        //sæt position for clearRect
+        this.A2 = this.xKoord;
+        this.B2 = this.yKoord;
+        
+        //skub start position
+        this.xKoord = this.xKoord + size;
+        this.yKoord = this.yKoord + size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A3 = this.xKoord;
+        this.B3 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord;
+        this.yKoord = this.yKoord - size - size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+    
+        //sæt position for clearRect
+        this.A4 = this.xKoord;
+        this.B4 = this.yKoord;
+    
+        //skub startposition
+        this.xKoord = this.xKoord;
+        this.yKoord = this.yKoord + size;
+    }
+    
+    createTblockRIGHT() {
+        //fjern tidligere figurer
+        ctx.clearRect(this.A1, this.B1, size, size);
+        ctx.clearRect(this.A2, this.B2, size, size);
+        ctx.clearRect(this.A3, this.B3, size, size);
+        ctx.clearRect(this.A4, this.B4, size, size); 
+
+        
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        this.A1 = this.xKoord;
+        this.B1 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord + size;
+        this.yKoord = this.yKoord;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        this.A2 = this.xKoord;
+        this.B2 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord - size;
+        this.yKoord = this.yKoord + size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        this.A3 = this.xKoord;
+        this.B3 = this.yKoord;
+    
+        //skub start position
+        this.xKoord = this.xKoord;
+        this.yKoord = this.yKoord - size - size;
+    
+        //lav rectangel ud fra tidligere variabler
+        ctx.fillRect(this.xKoord, this.yKoord, size, size);
+        this.A4 = this.xKoord;
+        this.B4 = this.yKoord;
+        this.xKoord = this.xKoord;
+        this.yKoord = this.yKoord + size;
     }
 }
 
 class SPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 3;          //place of rotation axes
-        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
         this.colour = "#00ff00";  //green hex
     }
+    
+
 }
 
 class ZPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 3;          //place of rotation axes
-        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
         this.colour = "#ff0000";  //red hex
     }
 }
@@ -140,8 +344,6 @@ class ZPiece extends MainPiece{
 class JPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 3;          //place of rotation axes
-        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
         this.colour = "#0000ff";  //blue hex
     }
 }
@@ -149,8 +351,6 @@ class JPiece extends MainPiece{
 class LPiece extends MainPiece{
     constructor(){
         super();
-        this.xKoord = 3;          //place of rotation axes
-        this.yKoord = 3;          //one cube is 2 wide, to avoid decimals
         this.colour = "#ff8000";  //orange hex
     }
 }
