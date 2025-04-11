@@ -40,28 +40,27 @@ function ChosePiece() {
     }
 }
 
-function GeneratePlayplate(){
-    for (let col = 0; col < 10; col++){
-        Playplate[col] = [];
-        for (let row = 0; row < 20; row++){
-            Playplate[col][row] = "E";
+function GeneratePlayplate(){ //make a new playplate function
+    for (let X = 0; X < 10; X++){
+        Playplate[X] = []; // create new collum, x variable
+        for (let Y = 0; Y < 20; Y++){
+            Playplate[X][Y] = "E"; // fill with y variable, E because empty
         }
     }
 }
 
-// funktion to drawlines on borders
-function DrawPlayplate() {
-    for (let col = 0; col < 10; col++){
-        for (let row = 0; row < 20; row++){
-            ctx.fillStyle = colourObj[Playplate[col][row]];
-            ctx.fillRect(col*size, row*size, size-1, size-1);
+// funktion to draw playplate
+function DrawPlayplate() { 
+    for (let X = 0; X < 10; X++){     // for evrery x collum
+        for (let Y = 0; Y < 20; Y++){ // axes every y koord
+            ctx.fillStyle = colourObj[Playplate[X][Y]]; //get type to determin colour
+            ctx.fillRect(X*size, Y*size, size-1, size-1); //draw rektangle
         }
     }
 }
 
-GeneratePlayplate()
-
-console.log(Playplate[1][1])
+GeneratePlayplate() //make a new playplate
 
 DrawPlayplate() //draw grid
+
 ChosePiece() //make first figurer array
