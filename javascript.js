@@ -53,11 +53,13 @@ function GeneratePlayplate(){ //make a new playplate function
 function DrawPlayplate() { 
     for (let X = 0; X < 10; X++){     // for evrery x collum
         for (let Y = 0; Y < 20; Y++){ // axes every y koord
-            ctx.fillStyle = colourObj[Playplate[X][Y]]; //get type to determin colour
+            ctx.fillStyle = colourObj[Playplate[X][Y]];   //get type to determin colour
             ctx.fillRect(X*size, Y*size, size-1, size-1); //draw rektangle
         }
     }
 }
+
+
 
 GeneratePlayplate() //make a new playplate
 
