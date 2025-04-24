@@ -63,11 +63,12 @@ function DrawPlayplate() {
 
 class UsedPiece {
     constructor(){
-        
+        this.PieceCenter_xKoord = 0;
+        this.PieceCenter_yKoord = 0;
     }
 
     MoveDown(){
-
+        this.PieceCenter_yKoord++;
     }
 
     RotateRight(){
@@ -79,7 +80,11 @@ class UsedPiece {
     }
 
     PieceDraw(){
-
+        for(){
+            for(){
+                
+            }
+        }
     }
 }
 
@@ -113,5 +118,5 @@ DrawPlayplate()
 setInterval(GameLoop, interval);
 
 function GameLoop(){ //the function which calls the others to do the game loop
-    
+
 }
