@@ -13,6 +13,8 @@ var ScoreList = []; //current list of highscores
 var CurrentScore = 0; //current score
 var PlayerDead = 0; // is player dead 
 
+var interval = 1000 //time to update and move pices in miliseconds
+
 const colourObj = { //list of piece colours to draw
     "E": "#555555", //empty space
     "I": "#00ffff",
@@ -81,18 +83,35 @@ class UsedPiece {
     }
 }
 
-function ClearLine(Line){ //to clear line, variable is line to be cleared
-    for (let X = 0; X < 10; X++){
-        Playplate[X] = []; // create new collum, x variable
-        for (let Y = 0; Y < 20; Y++){
-            Playplate[X][Y] = "E"; // fill with y variable, E because empty
+function ClearLine(line) { //to clear line, variable is line to be cleared
+    for (let X = 0; X < 10; X++){ // for every x
+        for (let Y = line; Y > 0; Y--){ //count up and replace with previus, this is to prevent dobble
+            Playplate[X][Y] = Playplate[X][(Y-1)]; 
         }
+        Playplate[X][0] = "E" // make top line empty
     }
 }
+
+function PlayerDied(){
+    PlayerDead = 1
+
+}
+
 
 
 GeneratePlayplate() //make a new playplate
 
 DrawPlayplate() //draw grid
-
 ChosePiece() //make first figurer array
+
+
+ClearLine(4)
+DrawPlayplate()
+
+
+
+setInterval(GameLoop, interval);
+
+function GameLoop(){ //the function which calls the others to do the game loop
+    
+}
