@@ -6,15 +6,15 @@ const width = canvas.width; //størrelsen af canvas
 const height = canvas.height; //størrelsen af canvas
 const size = 20; //størrelsen af figur
 
-var PieceList = [];
-var Playplate = [];
+var PieceList = []; //next pices in row
+var Playplate = []; //the place where all is contained
 
-var ScoreList = [];
-var CurrentScore = 0;
-var PlayerDead = 0;
+var ScoreList = []; //current list of highscores
+var CurrentScore = 0; //current score
+var PlayerDead = 0; // is player dead 
 
-const colourObj = {
-    "E": "#555555",
+const colourObj = { //list of piece colours to draw
+    "E": "#555555", //empty space
     "I": "#00ffff",
     "O": "#ffff00",
     "T": "#ff00ff",
@@ -59,6 +59,36 @@ function DrawPlayplate() {
     }
 }
 
+class UsedPiece {
+    constructor(){
+        
+    }
+
+    MoveDown(){
+
+    }
+
+    RotateRight(){
+
+    }
+
+    RotateLeft(){
+        
+    }
+
+    PieceDraw(){
+
+    }
+}
+
+function ClearLine(Line){ //to clear line, variable is line to be cleared
+    for (let X = 0; X < 10; X++){
+        Playplate[X] = []; // create new collum, x variable
+        for (let Y = 0; Y < 20; Y++){
+            Playplate[X][Y] = "E"; // fill with y variable, E because empty
+        }
+    }
+}
 
 
 GeneratePlayplate() //make a new playplate
