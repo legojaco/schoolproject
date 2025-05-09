@@ -6,9 +6,15 @@
 <title>Input med hændelser - Tastatur og mus</title>
 </head>
 <body onkeyup="whichButton(event)">
+
+  
   <canvas id="playboard" width="199" height="399" style="border:2px solid rgb(0, 0, 0);">  <!-- draw canvas, 2 pixel border-->
   Sorry, your browser does not support canvas. <!-- if draw canvas not working-->
   </canvas>
+
+  <p id="score"> score: </p>
+
+  <button id="start" onclick="setTimeout(GameLoop, 100)">start game</button>
 </body>
 <script src="javascript.js"></script> <!-- code that was made-->
 </html>
