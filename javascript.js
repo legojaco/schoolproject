@@ -324,7 +324,7 @@ function GameLoop(){ //the function which calls the others to do the game loop
     for (let Y = 0; Y < 20; Y++){     // for evrery Y collum
         if (!(Playplate[Y].includes(9))){ //check if full
             ClearLine(Y); //if yes clear line
-            interval -= Math.ceil(interval/80); //shorten movement time
+            interval -= Math.ceil(interval/5); //shorten movement time
             CurrentScore++; //increase score by 1
         }
     }
